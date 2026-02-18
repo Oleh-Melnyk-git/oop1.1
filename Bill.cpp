@@ -7,10 +7,16 @@ using namespace std;
 int main() {
   bill a;
 
-  cout << "Введіть тривалість розмови: ";
-  cin >> a.first;
-  cout << "Введіть ціну за хвилину: ";
-  cin >> a.second;
+  do {
+    cout << "Введіть тривалість розмови: ";
+    cin >> a.first;
+    cout << "Введіть ціну за хвилину: ";
+    cin >> a.second;
+
+    if (a.first <= 0 || a.second <= 0) {
+      cout << "Некоректні дані! Спробуйте ще раз.\n\n";
+    }
+  } while (a.first <= 0 || a.second <= 0);
 
   cout << "Тривалість розмови: " << a.first << endl;
   cout << "Ціна за хвилину: " << a.second << endl;
